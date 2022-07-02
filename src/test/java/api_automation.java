@@ -1,18 +1,15 @@
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.path.json.JsonPath;
-import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class JsonPlaceHolder {
-    @Test
+public class api_automation {
+    @Test()
     public void getUserId() {
         Response response = given().when().get("https://jsonplaceholder.typicode.com/users?id=2")
                 .then().assertThat().statusCode(200).extract().response();
